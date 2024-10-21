@@ -109,15 +109,15 @@ int main()
             std::cin >> input;
             current_player.setName(input);
             int randNum = std::rand() % 100;
-            int squareNum = sqrt(randNum);
-            std::cout << "What is the square root of " << randNum << " ?\n";
+            double squareNum = sqrt(randNum);
+            std::cout << squareNum << " is the square root of what number?\n";
             int guess = 0;
-            while(guess != squareNum) {
+            while(guess != randNum) {
                 std::cin >> guess;
                 count++;
-                if(guess < squareNum) {
+                if(guess < randNum) {
                     std::cout << "Too low. Guess again\n";
-                } else if(guess > squareNum) {
+                } else if(guess > randNum) {
                     std::cout << "Too high. Guess again\n";
                 } else {
                     std::cout << "Nice you guess it in " << count << " guesses.\n";
